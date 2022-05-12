@@ -38,6 +38,8 @@ For the Twitter side of things, John and Nate focused on finding the data. They 
 
 
 One drawback of using this method was that the novel’s title had to be searched with the novel's author. If only the author was used, sometimes people would be discussing other books the author wrote. Many of the book titles could have also been common phrases or words as well, so to find tweets specifically about the novels we were looking into, both the title and the author needed to be searched together. There were some interesting results. "Stars" were one such result. These tweets often rate a book out of 5 stars. For example,   
+
+
 ![tweet ex](https://github.com/dracoeye/is310groupproject/blob/main/Picture9.png)
 
 
