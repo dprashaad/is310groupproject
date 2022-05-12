@@ -6,52 +6,54 @@ I worked on my final project with two other classmates: John Gadomski and Nate G
 
 When searching for an alternative, I stumbled upon Amazon's Best Sellers Rank. This is a ranking system that assigns a score to products based on both the product's recent sales and historical sales data. There are categories within this overall ranking system, so all the novels' ranks in our data come from the book subcategory. The reason we chose this system as a revenue substitute is because unfortunately, Amazon is one of the biggest sources of books for many people out there. Additionally, Amazon was created before Twitter. Since its book sales data predates Twitter, the ranks have enough historical data too. We largely just looked at books that received an award after 2005, since Twitter was established in 2006 and we did not want any book to receive an unfair advantage. Once we figured out where we would be getting our data from, we started gathering it. From the Romantic Novelists' Associations website, I scraped all the novel titles, years, and authors. I put that into a CSV file so we could utilize it for visualizations later.  
  
-![csv file](https://github.com/dracoeye/is310groupproject/blob/main/Picture1.png)
 
-pics 1 and 2
+![csv file making](https://github.com/dracoeye/is310groupproject/blob/main/Picture1.png)
+![csv file making cont](https://github.com/dracoeye/is310groupproject/blob/main/Picture2.png)
+
 
 Unfortunately, I ran into problems when trying to web scrape Amazon. Even just trying to get the HTML from a product's page on Amazon gave me errors that said to contact Amazon. When I looked into the problem online, I saw that others would have similar issues. I tried different solutions, but I could not find a solution that worked. Since I had to find less than 100 ranks, I just went in manually and added a column to the CSV file I created earlier and copied and pasted in the ranks. Many of them were quite large (over a million) and some others (especially older ones) did not exist on Amazon. Luckily, only one novel did not have a rank after 2005--which makes sense since more modern books were more likely to be found on the site.  
 
-pic 3
+
+![csv file](https://github.com/dracoeye/is310groupproject/blob/main/Picture3.png)
 
 
 Once we had all the metadata about the novels, we worked on visualizing it. We used Seaborn, a Python library that is based on Matplotlib, which we have used in class. We chose Seaborn because we were familiar with Matplotlib and Seaborn had some useful functions we liked the look of. We also used Matplotlib and Excel as well for some graphs. 
 
 
-pic 4 - 6
+![making graphs](https://github.com/dracoeye/is310groupproject/blob/main/Picture4.png)
+![making graphs 2](https://github.com/dracoeye/is310groupproject/blob/main/Picture5.png)
+![making graphs 3](https://github.com/dracoeye/is310groupproject/blob/main/Picture6.png)
  
 We wanted to compare the ranks over time for the novels, which is shown above. It appears there is no correlation between the year a novel won the award and its rank for novels after 2006, but there is a trend for the entire list of novels tending to have lower ranks the older they are, as you can see below.
 
 
-pic 7
-
+![year and bsr](https://github.com/dracoeye/is310groupproject/blob/main/Picture7.png)
 
 For the Twitter side of things, John and Nate focused on finding the data. They utilized Twint, a Twitter scraping tool that was written for Python. There were some issues with installing it correctly, but eventually, it all worked out. It was useful and allowed them to search keywords (which would be the novels and authors) and see the results as well as see the buzz. They could even filter through the results by language and time. Here is a code example of when “Struck” by Joss Stirling was searched for.
 
 
-pic 8
+![twint](https://github.com/dracoeye/is310groupproject/blob/main/Picture8.png)
 
 
 One drawback of using this method was that the novel’s title had to be searched with the novel's author. If only the author was used, sometimes people would be discussing other books the author wrote. Many of the book titles could have also been common phrases or words as well, so to find tweets specifically about the novels we were looking into, both the title and the author needed to be searched together. There were some interesting results. "Stars" were one such result. These tweets often rate a book out of 5 stars. For example,   
-pic 9
-
+![tweet ex](https://github.com/dracoeye/is310groupproject/blob/main/Picture9.png)
 
 We actually ended up comparing the average star rating for the top three reviewed novels on Twitter with their Amazon ranks.  
 
 
-pic 10
+![visualizations](https://github.com/dracoeye/is310groupproject/blob/main/Picture10.png)
 
 
 This comparison was actually quite helpful and revealed that the higher the average rating on Twitter of a novel, the more it sold on Amazon. We also compared the frequency of how often novels received 5 stars (not many from the award list received them). 
 
 
-pic 11
+![visualizations](https://github.com/dracoeye/is310groupproject/blob/main/Picture11.png)
 
 
 Additionally, we compared a novel's Twitter buzz with its Best Sellers Rank. Nate counted the novel's buzz before and after it received its award and then we saw that the buzz increased after it received the award (for 2 out of 3 awards), which gives some weight to the award affecting readership. However, Love Song, which was the 2018 (and last) novel that won the award, had a dramatic decrease in buzz after it won the award. Further research is required to find why Love Song was different from other novels.
  
 
-pic 12
+![visualizations](https://github.com/dracoeye/is310groupproject/blob/main/Picture12.png)
 
 
 Once we had all our data and visualizations together, I created and organized a slide deck where we can share our results--which was used in our project presentation. Our results showed that a novel's time since it won its award does correlate with the novel's Best Sellers Rank on Amazon if we look at all the novels. There is a correlation between Twitter buzz and the award since the buzz about a novel increased after it won the award. There is also a correlation between a novel's rank and its average star rating on Twitter. Due to our setbacks, we had to decrease our work goals. We wanted to include an analysis of the publishers as well, but we ran out of time to do that. Ideally, we would like to continue our research in the future by comparing the novels that won this award with another list of romance novels. We would pick romance novels that are at the top of the Amazon Best Sellers List as well as novels from another award list. We also may want to investigate the publishers and see if there is a pattern of which publishers seem to appear on these lists often.  
